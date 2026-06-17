@@ -5,8 +5,4 @@ secondaryBackgroundColor = "#1e293b"
 textColor = "#f8fafc"
 font = "sans serif"
 
-[client]
-caching = "browser"
 
-[runner]
-magicEnabled = false
