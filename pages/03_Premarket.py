@@ -34,7 +34,7 @@ with tab1:
     fig_sentiment = px.bar(sentiment_data, x="category", y=["bullish", "bearish"],
                            title="Market Sentiment by Category", barmode="stack")
     fig_sentiment.update_layout(template="plotly_dark")
-    st.plotly_chart(fig_sentiment, use_container_width=True)
+    st.plotly_chart(fig_sentiment, width='stretch')
 
     st.markdown("---")
 
@@ -49,7 +49,7 @@ with tab1:
     ]
     fig_volume = px.line(volume_trend, x="week", y="volume", title="Prediction Market Volume (M $)")
     fig_volume.update_layout(template="plotly_dark")
-    st.plotly_chart(fig_volume, use_container_width=True)
+    st.plotly_chart(fig_volume, width='stretch')
 
     st.markdown("---")
 
@@ -173,12 +173,12 @@ with tab3:
         if classification_tree:
             st.subheader("Topic Classification Tree")
             df_class = pd.DataFrame(classification_tree)
-            st.dataframe(df_class, use_container_width=True)
+            st.dataframe(df_class, width='stretch')
         
         if word_bank:
             st.subheader("Keyword Bank")
             df_words = pd.DataFrame(word_bank)
-            st.dataframe(df_words, use_container_width=True)
+            st.dataframe(df_words, width='stretch')
         
         mapping = get_field_mapping()
         if mapping:

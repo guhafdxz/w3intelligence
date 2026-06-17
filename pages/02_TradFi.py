@@ -44,7 +44,7 @@ if "error" not in categories:
     fig_categories = px.pie(cat_df, values="Total Value (M $)", names="Category",
                             title="RWA Category Distribution")
     fig_categories.update_layout(template="plotly_dark")
-    st.plotly_chart(fig_categories, use_container_width=True)
+    st.plotly_chart(fig_categories, width='stretch')
     st.table(cat_df)
 
 st.markdown("---")
@@ -78,7 +78,7 @@ if "error" not in networks:
     fig_networks = px.bar(network_df, x="Network", y="Value", color="Market Share",
                           title="RWA Value by Network")
     fig_networks.update_layout(template="plotly_dark")
-    st.plotly_chart(fig_networks, use_container_width=True)
+    st.plotly_chart(fig_networks, width='stretch')
     
     display_df = network_df[["Rank", "Network", "RWA Count", "Value (Str)", "30D Change", "Market Share"]]
     display_df.columns = ["Rank", "Network", "RWA Count", "Value", "30D Change", "Market Share"]
@@ -90,7 +90,7 @@ st.subheader("RWA TVL Trend")
 trend_data = get_rwa_tvl_trend()
 fig_trend = px.line(trend_data, x="month", y="tvl", title="RWA TVL Growth")
 fig_trend.update_layout(template="plotly_dark")
-st.plotly_chart(fig_trend, use_container_width=True)
+st.plotly_chart(fig_trend, width='stretch')
 
 st.markdown("---")
 

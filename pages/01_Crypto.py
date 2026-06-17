@@ -49,7 +49,7 @@ fig_oi = go.Figure(data=[
     go.Bar(name='ETH OI (B $)', x=[o["exchange"] for o in oi_data], y=[o["eth_oi"] for o in oi_data])
 ])
 fig_oi.update_layout(barmode='group', template="plotly_dark")
-st.plotly_chart(fig_oi, use_container_width=True)
+st.plotly_chart(fig_oi, width='stretch')
 
 st.markdown("---")
 
@@ -58,7 +58,7 @@ corr_data = get_crypto_correlation_data()
 fig_corr = px.bar(corr_data, x="asset", y="correlation", color="correlation",
                   color_continuous_scale="RdBu", range_color=[-1, 1])
 fig_corr.update_layout(template="plotly_dark")
-st.plotly_chart(fig_corr, use_container_width=True)
+st.plotly_chart(fig_corr, width='stretch')
 
 st.markdown("---")
 
@@ -67,7 +67,7 @@ vix_data = get_vix_data()
 if "error" not in vix_data:
     fig_vix = px.line(vix_data, y="VIX", title="VIX Volatility Index")
     fig_vix.update_layout(template="plotly_dark")
-    st.plotly_chart(fig_vix, use_container_width=True)
+    st.plotly_chart(fig_vix, width='stretch')
 
 st.markdown("---")
 
